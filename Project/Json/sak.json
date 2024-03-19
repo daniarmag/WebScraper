@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cloudprojectpanthers",
+  "private_key_id": "e5c7f594b567028b10486dfe380d08d6e3f6e739",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJfWx92jjep+Xw\nDIHaSM/RMEJMTxvi06ASiJpOQJ9NkIP6PMhMDFWKPrX+e/LLIrfYNzSZqdC5Y/1H\n7U7xhc8mwrtXQDhFp5rH5JSAM0L9OVS+wEW7E5uU7rXD9hvshMiB80c8QnUbNH3g\nT+M/A2ngcRgd9U1Bz0lv2uBMMLnU2/8CB97YOSntjK7Ta+1XYr7ifo7EUryljJfu\neC2U17m4CoY1DYumP1qms6uf7gpqnh5+gphK/XKYBLaso09bS2GMW11lWNaywvd/\n87UGL8m4/7dJiDepSFLUB2kZPAoxwqU2smeQyiE4TYEkP/i0OY3MEoQ9F0m+eJ77\nvA2AHaXFAgMBAAECggEAKoSej8IsbQPGGE0zW6IwxGZoHx00d72Lkk2kLi4hz6bW\nysfnxnB13onUMsLqHaaSX/xqS6DTjEOGz5ZKqdnAOGAwUz2Ygk5XcaYRFip7EN93\nvBbrwAnns1paHeOByfvNKerx1cv6VUbS5zJEdGgef/+thKjeaCw7RXDNExbXKAzy\nlUDpogyJ8hlOTt/wlZzrFfgUAHHUt8Hm8P8lz830MUVCFSQoUpyvXymSMCwBnxSY\nOcPFXI4vJBol4rAAYZrQF1gPy/0E+rKfuz5tppwdDMA8vefOLGkyGWDEknhsfR0w\njMyMISu908HDe5IkzHZT0yGKWvvHVdeFvJjaM3548QKBgQDo+1CK5dyRlUbJ0EWY\nzzKXBR8eCxqYtJPyuI+O9JS4uoLijnJ92nNXvN/E9HfTNZyBwR18q+R4Fd9eYZfU\n8EpclykalahVhP2Xa54se8oy5z/MEL+u/W0v17g4IDuo7wAO8lLnJCTxAN71rIQw\npfG6lyzTHX5pafRPq3DDAuA3uQKBgQDdZZq4lVSpxUC2kt//ccoguLVcQk6G0SX8\nGDS0Ort+NtKhcyijGiBw6NRGJ7IfH1ggsv3jKmljKkb/lzrF3hMxldVSuH+W6Chr\nqR1TgWVAw3QpfZ2+btYetUjVaX5sUgwJRJDMVagkEsASnuaZpXfUEXNsO9VdZgWS\nXjs6HnNMbQKBgQC8f5kKyC9NGpnLbtbga8NirKIgjJtYMcIB/5Em+HvbegurgdTg\nPn5T3lyt3Z2VJSsbUEOrOuf+wLOYiR1vC3serq5y8+LeTltex5OSKhXOWYskb+im\njCRrMP27a1jZtYU2kpjAql25IBtEafAJ7DlH3khGBvbgEvm3+92f6hO/AQKBgQDN\nyUdLEuKi+snv6g1y7l2mlIleu/MptPXNoOI8M+taobKeht/a2soUqRXGL9eMviG4\nIyeCI0XZ+s4LfJIQoR7OFCs4vG0744bOq16q47ctv38VocEh5Pv5hx+v3mK4ZHrz\nklvU0jl7bkJCDJjjb741zBKxI9xq+A1tw1Dh8LPS8QKBgAjm7pa4xOTbDLwtQEE5\ng3xzn/bhS9GghdmOCs3Ho5UPbS3J7Iq+k6e7TaId2WEVBYgXg4onatdcC1uhV/Ig\nTxf1+QLCBlkai0td+vpFaHQJwstePJrk21v3pqI0188YDF759x3FHV1/vgxd9yeF\nHk8c+UheLj3iNTbixcL80h5M\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-216g0@cloudprojectpanthers.iam.gserviceaccount.com",
+  "client_id": "109950015070908493404",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-216g0%40cloudprojectpanthers.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

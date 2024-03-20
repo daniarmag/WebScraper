@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body {
+            background-color: #303030; /* Dark grey background for the entire page */
+            color: #ffffff; /* White text color for better readability */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #404040; /* Slightly lighter background color for header and footer */
+            padding: 10px;
+            text-align: center;
+            display: flex;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .statistics-block {
+            flex: 1;
+            background-color: #505050; /* Even lighter background color for the two sections */
+            padding: 20px;
+            margin: 10px;
+        }
+
+        #graph-section {
+            flex: 1;
+            background-color: #505050; /* Even lighter background color for the graph section */
+            padding: 20px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select {
+            margin-bottom: 20px;
+        }
+
+        button {
+            border: 1px solid gray;
+            color: #ffffff; 
+            padding: 10px 12px; 
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px; 
+        }
+        
+           h1 {
+            margin-top: 30px;
+            margin-right: 30px;
+            flex: 1; /* Take up remaining space */
+            text-align: center;
+        }
+        
+        #wordSelect, #generateButton {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        #wordSelect:hover, #generateButton:hover {
+            border: 1px solid gray;
+        }
+
+        #generateButton {
+            background-color: #303030;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        #back_btn {
+             margin: 10px 10px 10px 10px;
+        }
+        
+        .back-button {
+            background-color: transparent;
+            border-radius: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+         .back-button .material-symbols-outlined {
+            font-size: 40px;
+         }
+        
+        .back-button:focus {
+            outline: none; 
+        }
+        
+        .back-button:hover {
+            background-color: #606060;
+        }
+        #logoimg
+        {
+            align-items: right;
+            height: 90px;
+            width: 90px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+         <button id="back_btn" class="back-button" onclick = "backToAdmin()">
+            <span class="material-symbols-outlined">Arrow_Back</span>
+        </button>
+        <h1>Statistics Page</h1>
+        <img src="https://github.com/ndvp39/CloudComputing-tirgul/blob/main/project/images/icon.png?raw=true"id="logoimg">
+    </header>
+
+    <section>
+        <div class="statistics-block">
+            <h2>Most\Least Searched</h2>
+            <p>Most common search: ["AWS" appeared in 1000 searches]</p>
+            <p>Least common search: ["Data" appeared in 32 searches"]</p>
+        </div>
+
+        <div class="statistics-block">
+            <h2>Latest added indexes </h2>
+            <ul>
+                <li>[AWs]</li>
+                <li>[Cloud]</li>
+                <li>[Data]</li>
+            </ul>
+        </div>
+    </section>
+
+       <section id="graph-section">
+        <h2>Index Graph - top 5 links</h2>
+        <label for="wordSelect">Select index:</label>
+        <select id="wordSelect">
+            <option value="Cloud">Cloud</option>
+            <option value="AWS">AWS</option>
+            <option value="Data">Data</option>
+        </select>
+        <canvas id="wordGraph" width="400" height="200"></canvas>
+        <button id="generateButton" onclick="generateGraph()">Generate Graph</button>
+    </section>
+
+    <script>
+        // Sample data for the graph (replace with actual data)
+        const graphData = {
+            Cloud: {
+                URL1: 10,
+                URL2: 15,
+                // Add more URLs and their corresponding counts
+            },
+            AWS: {
+                URL1: 5,
+                URL2: 20,
+                // Add more URLs and their corresponding counts
+            },
+            Data: {
+                URL1: 2
+            },
+            // Add more words and their data as needed
+        };
+
+        function generateGraph() {
+            const selectedWord = document.getElementById('wordSelect').value;
+            const canvas = document.getElementById('wordGraph');
+            const ctx = canvas.getContext('2d');
+            
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the graph based on the selected word's data
+            const data = graphData[selectedWord];
+            let xPos = 10;
+
+            for (const url in data) {
+                const count = data[url];
+                ctx.fillStyle = '#4CAF50'; // Green color for bars
+                ctx.fillRect(xPos, canvas.height - count * 5, 30, count * 5);
+                ctx.fillStyle = '#ffffff'; // White color for text
+                ctx.fillText(`${count}`, xPos + 10, canvas.height - count * 5 - 10);
+                ctx.fillText(url, xPos, canvas.height + 15);
+                xPos += 50;
+            }
+        }
+        
+        function backToAdmin()
+        {
+             google.colab.kernel.invokeFunction('notebook.back_to_admin', [], {});
+        }
+    </script>
+
+</body>
+</html>

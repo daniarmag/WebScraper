@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Chatbot Screen</title>
+    <style>
+        body {
+            background-color: #111; /* Dark background color */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff; /* White text color */
+        }
+
+        #header {
+            padding: 10px;
+            text-align: left;
+        }
+
+        #logo {
+            max-width: 100px; /* Adjust the size as needed */
+        }
+
+        #chat-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #333; /* Darker grey chat container background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #chat {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+            background-color: #222; /* Dark grey chat background color */
+        }
+
+        #input-container {
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            background-color: #111; /* Dark background color for input bar */
+            align-items: center;
+        }
+
+        #user-input-chatbot {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+            background-color: #333; /* Darker grey input bar background color */
+            color: #fff; /* White text color for input bar */
+        }
+
+        #send-button {
+            padding: 10px;
+            background-color: #444; /* Darker grey button background color */
+            border: none;
+            border-radius: 5px;
+            color: #fff; /* White button text color */
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <img id="logo" src="https://github.com/ndvp39/CloudComputing-tirgul/blob/main/project/images/icon.png?raw=true" alt="Your Company Logo">
+    </div>
+
+    <div id="chat-container">
+        <div id="chat"></div>
+        <div id="input-container">
+            <input type="text" id="user-input-chatbot" placeholder="Type your question...">
+            <button id="send-button" onclick="askChatbot()">Send</button>
+        </div>
+    </div>
+
+</body>
+</html>

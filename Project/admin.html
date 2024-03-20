@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: #303030; /* Dark grey background for the entire page */
+            color: #ffffff; /* White text color for better readability */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header img {
+            width: 50px; /* Adjust the width of the image */
+            margin-right: 10px; /* Add some spacing between the image and text */
+        }
+        header, footer {
+            background-color: #404040; /* Slightly lighter background color for header and footer */
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center; /* Align items vertically in the header */
+            flex-direction: row; /* Set flex-direction to row */
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .sub-section {
+            background-color: #606060; /* Background color for sub-sections */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .index-section, .update-section {
+            flex: 1;
+            background-color: #505050; /* Even lighter background color for the two sections */
+            padding: 20px;
+            margin: 10px;
+        }
+        .index-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #707070; /* Background color for each row */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .url-row{
+            background-color: #707070; /* Background color for each row */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .url-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .index-name,
+        .index-status,
+        .index-count,
+        .index-url{
+            margin-right: 60px; /* Add margin to separate elements */
+        }
+        .update-button {
+            background-color: #4CAF50; /* Lighter color for the button */
+            color: #ffffff; /* Button text color */
+            margin-right: 60px; /* Add margin to separate elements */
+        }
+        button {
+            background-color: #606060; /* Lighter color for the button */
+            color: #ffffff; /* Button text color */
+            padding: 10px 12px; /* Adjusted padding for a smaller button */
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px; /* Adjusted font size for a smaller button */
+            display: block;
+            margin: 20px auto; /* Adjusted margin to center the button vertically */
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+         #logoimg
+        {
+            align-items: right;
+            height: 90px;
+            width: 90px;
+        }
+        
+           h1 {
+            flex: 1; /* Take up remaining space */
+            text-align: center;
+        }
+        
+        .material-symbols-outlined {
+            font-size: 40px;
+            margin: 10px 10px 10px 30px;
+         }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <span class="material-symbols-outlined">people</span>
+        <h1>Admin Page</h1>
+        <img src="https://github.com/ndvp39/CloudComputing-tirgul/blob/main/project/images/icon.png?raw=true" id="logoimg">
+    </header>
+
+    <section>
+        <div class="index-section">
+            <h2>Panther Indexes</h2>
+                <div class="url-row">
+                    <h3>Cloud</h3>
+                    <div class="url-info">
+                        <p>URL1</p>
+                        <p>11111</p>
+                    </div>
+
+                    <div class="url-info">
+                        <p>URL2</p>
+                        <p>222</p>
+                    </div>
+                </div>
+
+                <div class="url-row">
+                    <h3>AWS</h3>
+                    <div class="url-info">
+                        <p>URL1</p>
+                        <p>11</p>
+                    </div>
+
+                    <div class="url-info">
+                        <p>URL2</p>
+                        <p>22222</p>
+                    </div>
+                </div>
+        </div>
+
+        <div class="update-section">
+            <h2>Update Indexes</h2>
+            <div class="index-row">
+                <span class="index-name">Cloud</span>
+                <span class="index-status">Status: Updated in dd/mm/yyyy</span>
+                <button class="update-button">Update</button>
+            </div>
+
+            <div class="index-row">
+                <span class="index-name">AWS</span>
+                <span class="index-status">Status: Updated in dd/mm/yyyy</span>
+                <button class="update-button">Update</button>
+            </div>
+        </div>
+    </section>
+
+    <button onClick="openStatisticsScreen()">Statistics</button>
+
+<script>
+    
+    function openStatisticsScreen(){
+    
+        // send to python to open statistics
+        google.colab.kernel.invokeFunction('notebook.open_statistics_screen', [], {});
+    }
+    
+</script>
+
+</body>
+</html>

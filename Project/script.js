@@ -19,6 +19,10 @@ function openChatBot() {
     google.colab.kernel.invokeFunction('notebook.open_chatbot_page', [], {});
 }
 
+function openIndexEditor() {
+    google.colab.kernel.invokeFunction('notebook.open_indexeditor_page', [], {});
+}
+
 function askChatbot() {
     var question = document.getElementById('user-input-chatbot').value;
     var chatContainer = document.getElementById('chat');

@@ -19,8 +19,21 @@ function openChatBot() {
     google.colab.kernel.invokeFunction('notebook.open_chatbot_page', [], {});
 }
 
-function openIndexEditor() {
-    google.colab.kernel.invokeFunction('notebook.open_indexeditor_page', [], {});
+const correctPassword = "123456";
+
+// Function to open the admin page
+function openAdminPage() {
+    // Ask the user for a password
+    const userInput = prompt("Please enter the password:");
+
+    // Check if the user input matches the correct password
+    if (userInput === correctPassword) {
+        // Redirect to the admin page
+        google.colab.kernel.invokeFunction('notebook.open_indexeditor_page', [], {});
+    } else {
+        // Show an error message if the password is incorrect
+        alert("Incorrect password. Please try again.");
+    }
 }
 
 function askChatbot() {

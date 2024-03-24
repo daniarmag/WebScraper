@@ -11,7 +11,6 @@
     <!--Nav tag is used here for navigation bar at top right corner -->
     <nav>
       <div id="navdiv">
-        <div><button type="submit" name="button" onclick="openChatBot()">ChatBot</button></div>
         <span class="material-symbols-outlined">emoji_people</span>
         <div><button type="submit" name="button" onclick="openIndexEditor()">Index Editor</button></div>
       </div>
@@ -29,7 +28,11 @@
         </div>
         <!--Buttons -->
         <section>
-          <div><button type="submit" onclick="performSearch()">Panther Search</button></div>
+
+          <div>
+            <button type="submit" onclick="performSearch()">Panther Search</button>
+            <button type="submit" name="button" onclick="openChatBot()">PantherBOT</button>
+          </div>
         </section>
       </center>
 </body>

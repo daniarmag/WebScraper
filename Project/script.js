@@ -24,7 +24,7 @@ const correctPassword = "123456";
 // Function to open the admin page
 function openAdminPage() {
     // Ask the user for a password
-    const userInput = prompt("Please enter the password:");
+    const userInput = prompt("Please enter the password:", "Enter Password");
 
     // Check if the user input matches the correct password
     if (userInput === correctPassword) {

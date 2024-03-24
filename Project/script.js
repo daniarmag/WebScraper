@@ -92,16 +92,16 @@ function renderResults_title_link(titles, links, times_appeared) {
     }
 }
 
-function addSearchEventListener(inputId) {
+function addSearchEventListener(inputId, func) {
     document.getElementById(inputId).addEventListener("keyup", function(event) {
       // Check if the pressed key is Enter (key code 13)
       if (event.keyCode === 13) {
         // Trigger the search function
-        performSearch();
+        func();
       }
     });
   }
 
-  addSearchEventListener("searchInput");
+  addSearchEventListener("searchInput", performSearch);
 
-  addSearchEventListener("searchbartext");
+  addSearchEventListener("searchbartext", performSearch_again);

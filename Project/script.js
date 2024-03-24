@@ -104,5 +104,3 @@ function addSearchEventListener(inputId, func) {
 
 
   addSearchEventListener("searchInput", performSearch);
-
-  addSearchEventListener("searchbartext", performSearch_again);

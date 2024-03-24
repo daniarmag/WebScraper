@@ -28,6 +28,11 @@
           margin-left: 0.5em;
           border:none;
         }
+        #lowersection
+        {
+            width: 121px;
+            height: 40px;
+        }
         /* setting up size and border stle of search bar*/
         #maindiv{
         width:35%;

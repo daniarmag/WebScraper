@@ -12,6 +12,16 @@
           justify-content: left;
           align-items: left;
         }
+
+        #emojiheaderdiv{
+            margin-left: auto;
+        }
+
+        #headerdiv{
+            display:flex;
+            align-items: right;
+        }
+        
         button{
           border-radius: 3px;
           height:100%;

@@ -45,7 +45,15 @@
             
         </ul>
 </div>
-
+    <script>
+        document.getElementById("searchbartext").addEventListener("keyup", function(event) {
+      // Check if the pressed key is Enter (key code 13)
+      if (event.keyCode === 13) {
+        // Trigger the search function
+        performSearch_again();
+      }
+    });
+    </script>
 </body>
 </html>
 

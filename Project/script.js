@@ -44,9 +44,19 @@ function ChatbotResponse(response) {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-function renderResults_title_link(titles, links) {
+function renderResults_title_link(titles, links, times_appeared) {
     // Get the container where you want to append the new div elements
     var container = document.getElementById('searchresultsarea');
+    
+    // Display search information
+    var searchInfoDiv = document.createElement('div');
+    var timesAppearedInfo = document.createElement('p');
+    timesAppearedInfo.innerText = `Your search appeared ${times_appeared} times in the following links`;
+    var numResultsInfo = document.createElement('p');
+    numResultsInfo.innerText = `About ${titles.length} results`;
+    searchInfoDiv.appendChild(timesAppearedInfo);
+    searchInfoDiv.appendChild(numResultsInfo);
+    container.appendChild(searchInfoDiv);
     
     if(titles.length == 0 || links.length == 0){
         var divElement = document.createElement('div');

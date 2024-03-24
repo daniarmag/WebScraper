@@ -1,13 +1,12 @@
     <style>
 /* Styling of navigation bar */
-        #navdiv{
-            display:flex;
-            width:17%;
-            margin-left: 82%;
-            justify-content: right;
-            margin-top: 1%;
-            height:35px;
-          }
+        #navdiv {
+            position: absolute;
+            top: 1%;
+            right: 1%;
+            width: 17%;
+            height: 35px;
+        }
         nav img{
           margin-top: 5px;
         }

@@ -261,6 +261,7 @@
             }
             firstCombo.innerHTML = '<option value="">Select Index</option>';
             secondCombo.innerHTML = '<option value="">Select Link</option>';
+            getIndexesKeys()
             alert(selectedIndex + " has been successfully removed.");
         }
 
@@ -276,7 +277,8 @@
                 }
             }
             secondCombo.innerHTML = '<option value="">Select Link</option>';
-            alert(selectedLink + " has been successfully removed.");
+            getLinks();
+            alert(selectedLink + "\nhas been successfully removed.");
         }
 
         function getIndexesKeys() {

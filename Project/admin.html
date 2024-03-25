@@ -38,6 +38,11 @@
             /* Set flex-direction to row */
         }
 
+        #admin_page_buttons
+        {
+            width: 121px;
+            height: 40px;
+        }
         section {
             display: flex;
             justify-content: space-between;
@@ -155,6 +160,7 @@
             display: inline-block;
             overflow-x: auto;
             max-width: 700px;
+            align-items: center;
         }
 
         .custom-combobox select {
@@ -208,9 +214,22 @@
         </select>
     </section>
 
-    <button onClick="openStatisticsScreen()">Statistics</button>
+    <button id = "admin_page_buttons" onClick="deleteIndex()"> Delete Index</button>
+    <button id = "admin_page_buttons" onClick="deleteLink()"> Delete Link</button>
+    <button id = "admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
+
 
     <script>
+
+        function deleteIndex()
+        {
+            google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [], {});
+        }
+
+        function deleteLink()
+        {
+            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [], {});
+        }
 
         function getIndexesKeys() {
             google.colab.kernel.invokeFunction('notebook.get_indexes_keys', [], {});

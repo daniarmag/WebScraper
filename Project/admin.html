@@ -251,12 +251,31 @@
 
         function deleteIndex()
         {
-            google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [document.getElementById("firstCombo").value], {});
+            var selectedIndex = document.getElementById("firstCombo").value;
+            google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [selectedIndex], {});
+            var firstCombo = document.getElementById("firstCombo");
+            for (var i = 0; i < firstCombo.options.length; i++) {
+                if (firstCombo.options[i].value === selectedIndex) {
+                    firstCombo.remove(i);
+                    break;
+            
+            firstCombo.innerHTML = '<option value="">Select Index</option>';
+            secondCombo.innerHTML = '<option value="">Select Link</option>';
+            alert(selectedIndex + " has been successfully removed.");
         }
 
         function deleteLink()
         {
-            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [document.getElementById("firstCombo").value, document.getElementById("secondCombo").value], {});
+            var selectedIndex = document.getElementById("firstCombo").value;
+            var selectedLink = document.getElementById("secondCombo").value;
+            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [selectedIndex, selectedLink], {});
+            var secondCombo = document.getElementById("secondCombo");
+            for (var i = 0; i < secondCombo.options.length; i++) {
+                if (secondCombo.options[i].value === selectedLink) {
+                    secondCombo.remove(i);
+                    break;
+            secondCombo.innerHTML = '<option value="">Select Link</option>';
+            alert(selectedLink + " has been successfully removed.");
         }
 
         function getIndexesKeys() {

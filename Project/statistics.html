@@ -154,51 +154,52 @@
     </section>
 
     <script>
-        // Sample data for the graph (replace with actual data)
-        const graphData = {
-            Cloud: {
-                URL1: 10,
-                URL2: 15,
-                // Add more URLs and their corresponding counts
-            },
-            AWS: {
-                URL1: 5,
-                URL2: 20,
-                // Add more URLs and their corresponding counts
-            },
-            Data: {
-                URL1: 2
-            },
-            // Add more words and their data as needed
-        };
+        function getMinMaxKeys() {
+            google.colab.kernel.invokeFunction('notebook.get_min_max_keys', [], {});
+        }
 
-        function generateGraph() {
-            const selectedWord = document.getElementById('wordSelect').value;
+        // Function to update statistics block with most and least common search
+        function updateStatisticsBlock(min_key, min_counter, max_key, max_counter) {
+            var statisticsBlock = document.getElementById('statistics-block');
+            statisticsBlock.innerHTML = `
+                <p>Most common search: "${max_key}" appeared in ${max_counter} searches</p>
+                <p>Least common search: "${min_key}" appeared in ${min_counter} searches</p>
+              `;
+
+        }
+
+        function getRandomIndexes() {
+            google.colab.kernel.invokeFunction('notebook.get_random_indexes_with_counters', [], {});
+        }
+
+        function generateGraph(indexes, counters) {
+            console.log("ENTER");
             const canvas = document.getElementById('wordGraph');
             const ctx = canvas.getContext('2d');
-            
+
             // Clear the canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Draw the graph based on the selected word's data
-            const data = graphData[selectedWord];
-            let xPos = 10;
+            // Calculate the maximum counter to determine the scaling factor
+            const maxCounter = Math.max(...counters) + 40;
+            const scaleFactor = maxCounter > canvas.height ? canvas.height / maxCounter : 1;
 
-            for (const url in data) {
-                const count = data[url];
+            // Draw the graph based on the provided indexes and scaled counters
+            var xPos = 10;
+
+            for (let i = 0; i < indexes.length; i++) {
+                const index = indexes[i];
+                const scaledCounter = counters[i] * scaleFactor;
+
                 ctx.fillStyle = '#4CAF50'; // Green color for bars
-                ctx.fillRect(xPos, canvas.height - count * 5, 30, count * 5);
+                ctx.fillRect(xPos, canvas.height - scaledCounter, 30, scaledCounter);
                 ctx.fillStyle = '#ffffff'; // White color for text
-                ctx.fillText(`${count}`, xPos + 10, canvas.height - count * 5 - 10);
-                ctx.fillText(url, xPos, canvas.height + 15);
-                xPos += 50;
+                ctx.fillText(`${counters[i]} (${index})`, xPos + 5, canvas.height - scaledCounter - 10);
+                xPos += 90;
             }
         }
-        
-        function backToAdmin()
-        {
-             google.colab.kernel.invokeFunction('notebook.back_to_admin', [], {});
-        }
+
+        getMinMaxKeys()
     </script>
 
 </body>

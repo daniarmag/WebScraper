@@ -15,6 +15,11 @@ function backToHomePage() {
     google.colab.kernel.invokeFunction('notebook.back_to_home_page', [], {});
 }
 
+function backToAdmin()
+{
+     google.colab.kernel.invokeFunction('notebook.back_to_admin', [], {});
+}
+
 function openChatBot() {
     google.colab.kernel.invokeFunction('notebook.open_chatbot_page', [], {});
 }
@@ -117,3 +122,8 @@ function addSearchEventListener(inputId, func) {
 
 
   addSearchEventListener("searchInput", performSearch);
+
+
+  
+
+  

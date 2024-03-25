@@ -18,7 +18,13 @@
             padding: 0;
             justify-content: center;
         }
-
+        section{
+          display: flex;
+          margin-top: 2%;
+          width:23%;
+          justify-content: space-around;
+          margin-bottom: 2%;
+        }
         header img {
             width: 50px;
             /* Adjust the width of the image */
@@ -205,7 +211,7 @@
             pointer-events: none;
         }
         #firstCombo{
-            margin-right: 12px;
+            margin-right: 20px;
         }
     </style>
 </head>
@@ -231,7 +237,6 @@
     </div>
     </section>
 
-    <center>
         <section>
             <div id = "button-container">
                 <button id = "admin_page_buttons" onClick="deleteIndex()"> Delete Index</button>
@@ -239,7 +244,6 @@
                 <button id = "admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
             </div>
         </section>
-    </center>
 
 
 

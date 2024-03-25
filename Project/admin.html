@@ -247,6 +247,7 @@
 
         function deleteIndex()
         {
+            console.log(document.getElementById("firstCombo").value)
             google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [document.getElementById("firstCombo").value], {});
         }
 

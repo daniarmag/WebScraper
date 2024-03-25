@@ -99,6 +99,7 @@ function renderResults_title_link(titles, links, times_appeared) {
             // Create a new anchor element
             var anchorElement = document.createElement('a');
             anchorElement.href = links[i];
+            anchorElement.target = "_blank";
             anchorElement.appendChild(h2Element);
     
             // Append the anchor element to the div element

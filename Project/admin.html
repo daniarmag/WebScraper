@@ -225,11 +225,13 @@
                 <select id="firstCombo" onchange="getLinks()">
                     <option value="">Select Index</option>
                 </select>
+            </div>
         </section>
         <section class="custom-combobox">
-                <select id="secondCombo">
-                    <option value="">Select Link</option>
-                </select>
+            <div id = "button-container">
+                    <select id="secondCombo">
+                        <option value="">Select Link</option>
+                    </select>
             </div>
         </section>
     </section>
@@ -249,13 +251,12 @@
 
         function deleteIndex()
         {
-            console.log(document.getElementById("firstCombo").value)
             google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [document.getElementById("firstCombo").value], {});
         }
 
         function deleteLink()
         {
-            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [document.getElementById("secondCombo").value], {});
+            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [document.getElementById("firstCombo").value, document.getElementById("secondCombo").value], {});
         }
 
         function getIndexesKeys() {

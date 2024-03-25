@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            align-items: center;
+            justify-content: center;
         }
 
         header img {
@@ -173,7 +173,8 @@
             max-width: 700px;
             align-items: center;
             display: inline-block; 
-            margin-right: 10px;
+            justify-content: center;
+
         }
 
         .custom-combobox select {
@@ -186,6 +187,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            
         }
 
         .custom-combobox select:focus {
@@ -202,6 +204,9 @@
             transform: translateY(-50%);
             pointer-events: none;
         }
+        #firstCombo{
+            margin-right: 12px;
+        }
     </style>
 </head>
 
@@ -217,12 +222,12 @@
 
     <section class="custom-combobox">
         <div id = "button-container">
-        <select id="firstCombo" onchange="getLinks()">
-            <option value="">Select Index</option>
-        </select>
-        <select id="secondCombo">
-            <option value="">Select Link</option>
-        </select>
+            <select id="firstCombo" onchange="getLinks()">
+                <option value="">Select Index</option>
+            </select>
+            <select id="secondCombo">
+                <option value="">Select Link</option>
+            </select>
     </div>
     </section>
 

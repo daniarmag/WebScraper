@@ -172,6 +172,8 @@
             overflow-x: auto;
             max-width: 700px;
             align-items: center;
+            display: inline-block; 
+            margin-right: 10px;
         }
 
         .custom-combobox select {
@@ -214,12 +216,14 @@
     </header>
 
     <section class="custom-combobox">
+        <div id = "button-container">
         <select id="firstCombo" onchange="getLinks()">
             <option value="">Select Index</option>
         </select>
         <select id="secondCombo">
             <option value="">Select Link</option>
         </select>
+    </div>
     </section>
 
     <center>

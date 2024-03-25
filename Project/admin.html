@@ -42,7 +42,17 @@
         {
             width: 121px;
             height: 40px;
+            display: inline-block; 
+            margin-right: 10px;
         }
+
+        
+        #button-container 
+        {
+            display: flex;
+            justify-content: center; /* Optional: Align buttons horizontally in the center */
+        }
+
         section {
             display: flex;
             justify-content: space-between;
@@ -216,7 +226,7 @@
 
     <center>
         <section>
-            <div>
+            <div id = "button-container">
                 <button id = "admin_page_buttons" onClick="deleteIndex()"> Delete Index</button>
                 <button id = "admin_page_buttons" onClick="deleteLink()"> Delete Link</button>
                 <button id = "admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
@@ -230,12 +240,12 @@
 
         function deleteIndex()
         {
-            google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [], {});
+            google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [document.getElementById("firstCombo").value], {});
         }
 
         function deleteLink()
         {
-            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [], {});
+            google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [document.getElementById("secondCombo").value], {});
         }
 
         function getIndexesKeys() {

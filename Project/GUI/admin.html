@@ -172,12 +172,18 @@
             margin: 10px 10px 10px 30px;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items vertically */
+        }
+
+
+
         /* Styling for the combo box */
         .custom-combobox {
-            position: relative;
-            display: inline-block;
-            overflow-x: auto;
-            max-width: 700px;
+            margin-bottom: 10px; /* Add margin between the dropdowns and buttons */
         }
 
         .custom-combobox select {
@@ -220,32 +226,27 @@
             src="https://github.com/ndvp39/CloudComputing-tirgul/blob/main/Project/Images/icon.png?raw=true" />
     </header>
     <section>
-        <div id = "button-container">
-        <section class="custom-combobox">
-            
+        <div id="selection-container" class="button-container">
+            <section class="custom-combobox">
                 <select id="firstCombo" onchange="getLinks()">
                     <option value="">Select Index</option>
                 </select>
-
-        </section>
-        <section class="custom-combobox">
-
-                    <select id="secondCombo">
-                        <option value="">Select Link</option>
-                    </select>
-
-        </section>
-    </div>
+            </section>
+            <section class="custom-combobox">
+                <select id="secondCombo">
+                    <option value="">Select Link</option>
+                </select>
+            </section>
+        </div>
     </section>
-   
-
-        <section>
-            <div id = "button-container">
-                <button id = "admin_page_buttons" onClick="deleteIndex()"> Delete Index</button>
-                <button id = "admin_page_buttons" onClick="deleteLink()"> Delete Link</button>
-                <button id = "admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
-            </div>
-        </section>
+    
+    <section>
+        <div id="button-container" class="button-container">
+            <button id="admin_page_buttons" onClick="deleteIndex()">Delete Index</button>
+            <button id="admin_page_buttons" onClick="deleteLink()">Delete Link</button>
+            <button id="admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
+        </div>
+    </section>
 
 
 

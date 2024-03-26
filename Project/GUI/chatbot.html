@@ -122,6 +122,19 @@
             <button id="send-button" onclick="askChatbot()">Send</button>
         </div>
     </div>
-
+    <script>
+        function addSearchEventListener() 
+        {
+            document.getElementById("user-input-chatbot").addEventListener("keyup", function(event) 
+            {
+                // Check if the pressed key is Enter (key code 13)
+                if (event.keyCode === 13) 
+                {
+                    askChatbot();
+                }
+            });
+        }
+        addSearchEventListener()
+    </script>
 </body>
 </html>

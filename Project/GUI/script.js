@@ -45,6 +45,7 @@ function askChatbot() {
     var question = document.getElementById('user-input-chatbot').value;
     var chatContainer = document.getElementById('chat');
     chatContainer.innerHTML += '<div><strong>User:</strong> ' + question + '</div>';
+    chatContainer.innerHTML += '<br>'; 
     // Send the question to Python using output module
     google.colab.kernel.invokeFunction('notebook.receive_question_chatbot', [question], {});
 }
@@ -54,7 +55,7 @@ function ChatbotResponse(response) {
     // Append chatbot's response to the chat
     var chatContainer = document.getElementById('chat');
     chatContainer.innerHTML += '<div><strong style="color: blue;">Chatbot:</strong> ' + response + '</div>';
-    
+    chatContainer.innerHTML += '<br>'; 
     // Clear the user input
     document.getElementById('user-input-chatbot').value = '';
 

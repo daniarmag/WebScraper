@@ -53,7 +53,7 @@ function ChatbotResponse(response) {
     
     // Append chatbot's response to the chat
     var chatContainer = document.getElementById('chat');
-    chatContainer.innerHTML += '<br><br><div><strong style="color: blue;">Chatbot:</strong> ' + response + '</div><br>';
+    chatContainer.innerHTML += '<div><strong style="color: blue;">Chatbot:</strong> ' + response + '</div>';
     
     // Clear the user input
     document.getElementById('user-input-chatbot').value = '';

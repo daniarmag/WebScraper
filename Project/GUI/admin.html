@@ -275,7 +275,7 @@
             var selectedLink = document.getElementById("secondCombo").value;
             if (selectedIndex == "" || selectedLink == "") 
             {
-                alert("An index must be selected to be deleted.");
+                alert("An index and a link must both be selected to be deleted.");
                 return;
             }
             google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [selectedIndex, selectedLink], {});

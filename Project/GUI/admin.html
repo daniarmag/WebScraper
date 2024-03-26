@@ -251,7 +251,7 @@
 
         function deleteIndex() {
             var selectedIndex = document.getElementById("firstCombo").value;
-            if (selectedIndex === "Select Index") 
+            if (selectedIndex == "") 
             {
                 alert("An index must be selected to be deleted.");
                 return;
@@ -273,7 +273,7 @@
         function deleteLink() {
             var selectedIndex = document.getElementById("firstCombo").value;
             var selectedLink = document.getElementById("secondCombo").value;
-            if (selectedIndex == "Select Index" || selectedLink == "Select Link") 
+            if (selectedIndex == "" || selectedLink == "") 
             {
                 alert("An index must be selected to be deleted.");
                 return;

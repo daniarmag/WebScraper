@@ -220,30 +220,31 @@
             src="https://github.com/ndvp39/CloudComputing-tirgul/blob/main/Project/Images/icon.png?raw=true" />
     </header>
     <section>
-        <section class="custom-combobox">
-            <div id = "button-container">
+        <div class="custom-combobox">
+            <div class="button-container">
                 <select id="firstCombo" onchange="getLinks()">
                     <option value="">Select Index</option>
                 </select>
             </div>
-        </section>
-        <section class="custom-combobox">
-            <div id = "button-container">
-                    <select id="secondCombo">
-                        <option value="">Select Link</option>
-                    </select>
+        </div>
+    </section>
+    <section>
+        <div class="custom-combobox">
+            <div class="button-container">
+                <select id="secondCombo">
+                    <option value="">Select Link</option>
+                </select>
             </div>
-        </section>
+        </div>
+    </section>
+    <section>
+        <div class="button-container">
+            <button class="admin_page_buttons" onClick="deleteIndex()">Delete Index</button>
+            <button class="admin_page_buttons" onClick="deleteLink()">Delete Link</button>
+            <button class="admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
+        </div>
+    </section>
     
-   
-
-        
-            <div id = "button-container">
-                <button id = "admin_page_buttons" onClick="deleteIndex()"> Delete Index</button>
-                <button id = "admin_page_buttons" onClick="deleteLink()"> Delete Link</button>
-                <button id = "admin_page_buttons" onClick="openStatisticsScreen()">View Statistics</button>
-            </div>
-        </section>
 
 
 

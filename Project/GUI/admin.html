@@ -251,6 +251,11 @@
 
         function deleteIndex() {
             var selectedIndex = document.getElementById("firstCombo").value;
+            if (selectedIndex === "Select Index") 
+            {
+                alert("An index must be selected to be deleted.");
+                return;
+            }
             google.colab.kernel.invokeFunction('notebook.delete_index_from_db', [selectedIndex], {});
             var firstCombo = document.getElementById("firstCombo");
             for (var i = 0; i < firstCombo.options.length; i++) {
@@ -268,6 +273,11 @@
         function deleteLink() {
             var selectedIndex = document.getElementById("firstCombo").value;
             var selectedLink = document.getElementById("secondCombo").value;
+            if (selectedIndex == "Select Index" || selectedLink == "Select Link") 
+            {
+                alert("An index must be selected to be deleted.");
+                return;
+            }
             google.colab.kernel.invokeFunction('notebook.delete_link_from_db', [selectedIndex, selectedLink], {});
             var secondCombo = document.getElementById("secondCombo");
             for (var i = 0; i < secondCombo.options.length; i++) {

@@ -72,7 +72,7 @@ function renderResults_title_link(titles, links, times_appeared) {
     var timesAppearedInfo = document.createElement('p');
     timesAppearedInfo.innerText = `Your search appeared ${times_appeared} times in the following links`;
     var numResultsInfo = document.createElement('p');
-    numResultsInfo.innerText = `About ${titles.length} results`;
+    numResultsInfo.innerText = `Panther generated ${titles.length} results, in descending order`;
     searchInfoDiv.appendChild(timesAppearedInfo);
     searchInfoDiv.appendChild(numResultsInfo);
     container.appendChild(searchInfoDiv);

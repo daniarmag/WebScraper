@@ -159,6 +159,8 @@
         <button id="generateButton" onclick="getRandomIndexes()">Generate Graph</button>
     </section>
     <script>
+
+        // Requests the backend to get the minimum and maximum keys for statistics
         function getMinMaxKeys() {
             google.colab.kernel.invokeFunction('notebook.get_min_max_keys', [], {});
         }
@@ -173,10 +175,12 @@
 
         }
 
+        // Requests the backend to get random indexes with their corresponding counters
         function getRandomIndexes() {
             google.colab.kernel.invokeFunction('notebook.get_random_indexes_with_counters', [], {});
         }
 
+        // Draws a graph based on the provided indexes and counters
         function generateGraph(indexes, counters) {
             console.log("ENTER");
             const canvas = document.getElementById('wordGraph');

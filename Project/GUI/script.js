@@ -1,25 +1,30 @@
+// Sends the search string entered by the user to the backend to perform a search action
 function performSearch() {
+    // Get the search string entered by the user
     var searchString = document.getElementById('searchInput').value;
-    //window.location.assign("results.html");
-    // Send the search string to Python using output module
+    
+    // Send the search string to Python using the output module
     google.colab.kernel.invokeFunction('notebook.receive_search_string', [searchString], {});
-
 }
 
+// Sends the search string entered by the user in the result screen to the backend to perform a search action
 function performSearch_again() {
     var searchString = document.getElementById('searchbartext').value;
     google.colab.kernel.invokeFunction('notebook.receive_search_string', [searchString], {});
 }
 
+// Sends a request to the backend to navigate back to the home page
 function backToHomePage() {
     google.colab.kernel.invokeFunction('notebook.back_to_home_page', [], {});
 }
 
+// Sends a request to the backend to navigate back to the admin page
 function backToAdmin()
 {
      google.colab.kernel.invokeFunction('notebook.back_to_admin', [], {});
 }
 
+// Sends a request to the backend to open the chatbot page
 function openChatBot() {
     google.colab.kernel.invokeFunction('notebook.open_chatbot_page', [], {});
 }
@@ -41,6 +46,7 @@ function openAdminPage() {
     }
 }
 
+// Sends the user's question to the backend to interact with the chatbot and changing the display screen
 function askChatbot() {
     var question = document.getElementById('user-input-chatbot').value;
     var chatContainer = document.getElementById('chat');
@@ -49,7 +55,8 @@ function askChatbot() {
     // Send the question to Python using output module
     google.colab.kernel.invokeFunction('notebook.receive_question_chatbot', [question], {});
 }
-    
+
+// Appends the chatbot's response to the chat interface
 function ChatbotResponse(response) {
     
     // Append chatbot's response to the chat
@@ -63,6 +70,7 @@ function ChatbotResponse(response) {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
+// Renders search results with titles and links
 function renderResults_title_link(titles, links, times_appeared) {
     // Get the container where you want to append the new div elements
     var container = document.getElementById('searchresultsarea');
@@ -76,7 +84,8 @@ function renderResults_title_link(titles, links, times_appeared) {
     searchInfoDiv.appendChild(timesAppearedInfo);
     searchInfoDiv.appendChild(numResultsInfo);
     container.appendChild(searchInfoDiv);
-    
+
+    // Check if there are no results
     if(titles.length == 0 || links.length == 0){
         var divElement = document.createElement('div');
         var h2Element = document.createElement('h2');
@@ -112,6 +121,7 @@ function renderResults_title_link(titles, links, times_appeared) {
     }
 }
 
+// Adds an event listener to the specified input element to trigger a function when the Enter key is pressed
 function addSearchEventListener(inputId, func) {
     document.getElementById(inputId).addEventListener("keyup", function(event) {
       // Check if the pressed key is Enter (key code 13)

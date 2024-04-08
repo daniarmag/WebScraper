@@ -235,7 +235,7 @@
 
 
     <script>
-
+        // Deletes the selected index from the combo box, database, and refreshes UI.
         function deleteIndex() {
             var selectedIndex = document.getElementById("firstCombo").value;
             if (selectedIndex == "") 
@@ -256,7 +256,8 @@
             getIndexesKeys()
             alert(selectedIndex + " has been successfully removed.");
         }
-
+        
+        // Deletes the selected link associated with a particular index.
         function deleteLink() {
             var selectedIndex = document.getElementById("firstCombo").value;
             var selectedLink = document.getElementById("secondCombo").value;
@@ -277,7 +278,8 @@
             getLinks();
             alert(selectedLink + "\nhas been successfully removed.");
         }
-
+        
+        // Fetches the keys of indexes from the backend
         function getIndexesKeys() {
             google.colab.kernel.invokeFunction('notebook.get_indexes_keys', [], {});
         }
@@ -311,6 +313,7 @@
             google.colab.kernel.invokeFunction('notebook.get_indexes_values', [selectedOption], {});
         }
 
+        // Populates the second combo box with links
         function populateSecondCombo(links) {
             var secondCombo = document.getElementById("secondCombo");
 

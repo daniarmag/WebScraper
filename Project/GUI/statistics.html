@@ -17,6 +17,9 @@
             margin: 0;
             padding: 0;
         }
+        h2{
+            margin-bottom: 10px;
+        }
 
         header,
         footer {
@@ -190,7 +193,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Calculate the maximum counter to determine the scaling factor
-            var maxCounter = Math.max(...counters) + 300;
+            var maxCounter = Math.max(...counters) + 350;
             var scaleFactor = maxCounter > canvas.height ? canvas.height / maxCounter : 1;
 
             // Draw the graph based on the provided indexes and scaled counters

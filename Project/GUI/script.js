@@ -58,16 +58,21 @@ function askChatbot() {
 
 // Appends the chatbot's response to the chat interface
 function ChatbotResponse(response) {
-    
-    // Append chatbot's response to the chat
-    var chatContainer = document.getElementById('chat');
-    chatContainer.innerHTML += '<div><strong style="color: #3498db;">Chatbot:</strong> ' + response + '</div>';
-    chatContainer.innerHTML += '<br>'; 
-    // Clear the user input
-    document.getElementById('user-input-chatbot').value = '';
+    try {
+        // Append chatbot's response to the chat
+        var chatContainer = document.getElementById('chat');
+        chatContainer.innerHTML += '<div><strong style="color: #3498db;">Chatbot:</strong> ' + response + '</div>';
+        chatContainer.innerHTML += '<br>'; 
+        // Clear the user input
+        document.getElementById('user-input-chatbot').value = '';
 
-    // Scroll to the bottom of the chat
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+        // Scroll to the bottom of the chat
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    } catch (error) {
+        // Handle the error
+        console.error('An error occurred while appending chatbot response:', error);
+        // You can add additional error handling logic here, such as logging or displaying an error message to the user.
+    }
 }
 
 // Renders search results with titles and links

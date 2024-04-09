@@ -184,32 +184,35 @@
         }
 
         // Draws a graph based on the provided indexes and counters
-        function generateGraph(indexes, counters) {
-            console.log("ENTER");
-            const canvas = document.getElementById('wordGraph');
-            const ctx = canvas.getContext('2d');
+function generateGraph(indexes, counters) {
+    console.log("ENTER");
+    const canvas = document.getElementById('wordGraph');
+    const ctx = canvas.getContext('2d');
 
-            // Clear the canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Calculate the maximum counter to determine the scaling factor
-            var maxCounter = Math.max(...counters) + 350;
-            var scaleFactor = maxCounter > canvas.height ? canvas.height / maxCounter : 1;
+    // Define a fixed maximum height for the graph
+    const maxHeight = 300; // Adjust this value as needed
 
-            // Draw the graph based on the provided indexes and scaled counters
-            var xPos = 10;
+    // Calculate the scaling factor based on the fixed maximum height
+    var maxCounter = Math.max(...counters);
+    var scaleFactor = maxCounter > maxHeight ? maxHeight / maxCounter : 1;
 
-            for (let i = 0; i < indexes.length; i++) {
-                const index = indexes[i];
-                const scaledCounter = counters[i] * scaleFactor;
+    // Draw the graph based on the provided indexes and scaled counters
+    var xPos = 10;
 
-                ctx.fillStyle = '#4CAF50'; // Green color for bars
-                ctx.fillRect(xPos, canvas.height - scaledCounter, 30, scaledCounter);
-                ctx.fillStyle = '#ffffff'; // White color for text
-                ctx.fillText(`${counters[i]} (${index})`, xPos + 5, canvas.height - scaledCounter - 10);
-                xPos += 150;
-            }
-        }
+    for (let i = 0; i < indexes.length; i++) {
+        const index = indexes[i];
+        const scaledCounter = counters[i] * scaleFactor;
+
+        ctx.fillStyle = '#4CAF50'; // Green color for bars
+        ctx.fillRect(xPos, canvas.height - scaledCounter, 30, scaledCounter);
+        ctx.fillStyle = '#ffffff'; // White color for text
+        ctx.fillText(`${counters[i]} (${index})`, xPos + 5, canvas.height - scaledCounter - 10);
+        xPos += 150;
+    }
+}
 
         getMinMaxKeys()
     </script>

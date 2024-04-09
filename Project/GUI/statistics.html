@@ -190,8 +190,8 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Calculate the maximum counter to determine the scaling factor
-            const maxCounter = Math.max(...counters) + 40;
-            const scaleFactor = maxCounter > canvas.height ? canvas.height / maxCounter : 1;
+            var maxCounter = Math.max(...counters) + 40;
+            var scaleFactor = maxCounter > canvas.height ? canvas.height / maxCounter : 1;
 
             // Draw the graph based on the provided indexes and scaled counters
             var xPos = 10;

@@ -59,6 +59,14 @@ function askChatbot() {
 // Appends the chatbot's response to the chat interface
 function ChatbotResponse(response) {
     try {
+        // Regular expression to match URLs
+        var urlRegex = /(https?:\/\/[^\s]+)/g;
+
+        // Replace URLs with clickable links
+        response = response.replace(urlRegex, function(url) {
+            return '<a href="' + url + '" target="_blank">' + url + '</a>';
+        });
+
         // Append chatbot's response to the chat
         var chatContainer = document.getElementById('chat');
         chatContainer.innerHTML += '<div><strong style="color: #3498db;">Chatbot:</strong> ' + response + '</div>';
@@ -74,6 +82,7 @@ function ChatbotResponse(response) {
         // You can add additional error handling logic here, such as logging or displaying an error message to the user.
     }
 }
+
 
 // Renders search results with titles and links
 function renderResults_title_link(titles, links, times_appeared) {

@@ -85,7 +85,7 @@ function ChatbotResponse(response) {
 
 
 // Renders search results with titles and links
-function renderResults_title_link(titles, texts, links, times_appeared) {
+function renderResults_title_link(titles, links, texts, times_appeared) {
     // Get the container where you want to append the new div elements
     var container = document.getElementById('searchresultsarea');
     

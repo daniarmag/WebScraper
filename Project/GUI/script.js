@@ -129,7 +129,17 @@ function renderResults_title_link(titles, links, texts, times_appeared) {
             // Create a new h3 element
             var h3Element = document.createElement('h3');
             h3Element.innerText = texts[i];
-            h3Element.style.fontSize = '12px';
+            h3Element.style.fontSize = '12.6px';
+            
+            var maxLength = 100; // Maximum length of summary (texts[i])
+
+            // Check if the text length exceeds the maximum length
+            if (texts[i].length > maxLength) {
+                // Truncate the text and add ellipsis
+                h3Element.innerText = texts[i].substring(0, maxLength) + '...';
+            } else {
+                h3Element.innerText = texts[i];
+            }
     
             // Append the anchor element to the div element
             divElement.appendChild(anchorElement);

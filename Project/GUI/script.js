@@ -85,7 +85,7 @@ function ChatbotResponse(response) {
 
 
 // Renders search results with titles and links
-function renderResults_title_link(titles, links, times_appeared) {
+function renderResults_title_link(titles, texts, links, times_appeared) {
     // Get the container where you want to append the new div elements
     var container = document.getElementById('searchresultsarea');
     
@@ -125,9 +125,16 @@ function renderResults_title_link(titles, links, times_appeared) {
             anchorElement.href = links[i];
             anchorElement.target = "_blank";
             anchorElement.appendChild(h2Element);
+
+            // Create a new h3 element
+            var h3Element = document.createElement('h3');
+            h3Element.innerText = texts[i];
     
             // Append the anchor element to the div element
             divElement.appendChild(anchorElement);
+
+            // Append the h3 element to the div element
+            divElement.appendChild(h3Element);
     
             // Append the div element to the container
             container.appendChild(divElement);

@@ -129,7 +129,7 @@ function renderResults_title_link(titles, links, texts, times_appeared) {
             // Create a new h3 element
             var h3Element = document.createElement('h3');
             h3Element.innerText = texts[i];
-            h3Element.style.fontSize = '10px';
+            h3Element.style.fontSize = '12px';
     
             // Append the anchor element to the div element
             divElement.appendChild(anchorElement);

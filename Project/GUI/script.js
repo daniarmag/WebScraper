@@ -136,10 +136,10 @@ function renderResults_title_link(titles, links, texts, times_appeared) {
             // Check if the text length exceeds the maximum length
             if (texts[i].length > maxLength) {
                 // Truncate the text and add ellipsis
-                var truncatedText = texts[i].substring(0, maxLength/2) + '\n' + texts[i].substring(maxLength/2, maxLength) + '...';
+                var truncatedText = texts[i].substring(0, maxLength/2) + '-\n-' + texts[i].substring(maxLength/2, maxLength) + '...';
                 h3Element.innerText = truncatedText;
             } else if (texts[i].length > maxLength/2) {
-                var truncatedText = texts[i].substring(0, maxLength/2) + '\n' + texts[i].substring(maxLength/2, texts[i].length);
+                var truncatedText = texts[i].substring(0, maxLength/2) + '-\n-' + texts[i].substring(maxLength/2, texts[i].length);
                 h3Element.innerText = truncatedText;
             } else {
                 h3Element.innerText = texts[i];
